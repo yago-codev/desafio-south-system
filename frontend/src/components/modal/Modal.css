@@ -1,0 +1,65 @@
+.modal {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  max-width: 300px;
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+}
+
+.modal .modal-img {
+  width: 60px;
+}
+
+.modal .modal-title {
+  font-size: 24px;
+}
+
+.modal .modal-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.modal .modal-input {
+  height: 40px;
+  padding: 0 15px;
+  border: 1px solid #eee;
+  border-radius: 4px;
+  margin-bottom: 10px;
+  font-size: 14px;
+  color: #444;
+}
+
+.modal .modal-input:focus {
+  border-color: #c1b2f3;
+}
+
+.modal .span-error-message {
+  margin-bottom: 10px;
+  color: #FF8080;
+  font-weight: bold;
+}
+
+.modal .modal-button {
+  height: 40px;
+  width: 90px;
+  border-radius: 4px;
+  font-weight: bold;
+  font-size: 14px;
+  border: 0;
+  color: #fff;
+  background: #7159c1;
+}
+
+.modal .modal-button:hover {
+  background: #634dac;
+}
+
+.modal .form-modal {
+  display: flex;
+  flex-direction: column;
+}

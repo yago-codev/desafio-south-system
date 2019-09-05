@@ -1,0 +1,29 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 500px;
+  width: 100%;
+  background: #fff;
+  border-radius: 4px;
+  padding: 30px 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border: 2px solid black;
+}
+
+.card img {
+  width: 50px;
+  margin: 0 auto 10px auto !important;
+}
+
+.card-title {
+  margin-bottom: 15px;
+}
+
+.list {
+  list-style: none;
+}
+
+.modalAnimate {
+  display: flex !important;
+}
