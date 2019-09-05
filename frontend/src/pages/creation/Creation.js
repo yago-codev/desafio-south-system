@@ -7,6 +7,7 @@ import { history } from '../../history'
 import { Link } from 'react-router-dom';
 import listDragonsApi from '../../services/api'
 
+import dragonAnimation from './dragon-animation.gif'
 import './Creation.css'
 import dragonImg from '../../dragon.png'
 
@@ -60,7 +61,7 @@ class Creation extends Component {
         className="form"
         onSubmit={this.handleDragonSave}>
         <div className="form-wrapper">
-          <img className="form-img" src={dragonImg} />
+          <img className="form-img" src={dragonAnimation} />
           <h1 className="form-title mb-15">Awasome Dragons</h1>
           <div className="form-group">
             <input

@@ -20,8 +20,8 @@ const Register = () => {
       })
   }
   const validations = yup.object().shape({
-    email: yup.string().email().required(),
-    password: yup.string().min(8).required(),
+    email: yup.string().email().required('O email é obrigatório!'),
+    password: yup.string().min(8).required('A senha é obrigatória!'),
   })
   return (
     <>
@@ -32,14 +32,14 @@ const Register = () => {
       >
         <Form className="form">
           <div className="form-wrapper">
-            <img className="form-img" src={dragonImg} />
-            <h1 className="form-title mb-15">Awasome Dragons</h1>
+            <img className="form-img-register" src={dragonAnimation} />
+            <h1 className="form-title mb-15">criar usuário</h1>
             <div className="form-group">
               <Field
                 className="form-input"
                 name="firstName"
                 placeholder="Insira seu primeiro nome" />
-              <ErrorMessage className="span-error-message" component="span" name="firstName" />
+              <ErrorMessage className="span-error-message" component="span" name="name" />
             </div>
             <div className="form-group">
               <Field

@@ -6,6 +6,7 @@ import { history } from '../../history'
 
 import './Login.css'
 import dragonImg from '../../dragon.png'
+import dragonAnimate from './dragon-animation.gif'
 
 
 const Login = () => {
@@ -33,14 +34,14 @@ const Login = () => {
       >
         <Form className="form">
           <div className="form-wrapper">
-            <img className="form-img" src={dragonImg} />
-            <h1 className="form-title mb-15">Awasome Dragons</h1>
+            <img className="form-img-login" src={dragonAnimate} />
+            <h1 className="form-title mb-15">entrar</h1>
             <div className="form-group">
-              <Field className="form-input" name="email" />
+              <Field className="form-input" name="email" placeholder="Insira seu email:"/>
               <ErrorMessage className="span-error-message" component="span" name="email" />
             </div>
             <div className="form-group">
-              <Field className="form-input" type="password" name="password" />
+              <Field className="form-input" type="password" name="password" placeholder="Insira sua senha:"/>
               <ErrorMessage className="span-error-message" component="span" name="password" />
             </div>
             <button className="form-button" type="submit">Login</button>

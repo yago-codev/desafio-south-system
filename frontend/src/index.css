@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css?family=Rubik&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,6 +10,7 @@
 
 html,
 body {
+  font-family: "Rubik", sans-serif;
   height: 100%;
 }
 
@@ -16,8 +19,7 @@ button {
 }
 
 body {
-  background: #7159c1;
-  font-family: Arial, Helvetica, sans-serif;
+  background: #d7e2e8;
   font-size: 14px;
   text-rendering: optimizelegibility !important;
   -webkit-font-smoothing: antialiased !important;
@@ -44,18 +46,18 @@ body {
 }
 
 .container-align-center {
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   text-align: center;
 }
 
-.main-wrapper>h1 {
+.main-wrapper > h1 {
   margin-bottom: 15px;
 }
 
-.auth-wrapper .form>img {
+.auth-wrapper .form > img {
   margin-bottom: 20px;
 }
 
@@ -102,7 +104,7 @@ body {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-.main-wrapper .content>strong {
+.main-wrapper .content > strong {
   display: block;
   text-align: center;
   font-size: 21px;
@@ -229,7 +231,7 @@ ul.providers {
   margin-right: 5px;
 }
 
-.main-wrapper .content form>input {
+.main-wrapper .content form > input {
   width: 100%;
 }
 
@@ -244,7 +246,7 @@ ul.providers {
   font-size: 14px;
   border: 0;
   color: #fff;
-  background: #7159c1;
+  background: #284a5d;
   margin-top: 5px;
 }
 

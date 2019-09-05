@@ -1,17 +1,18 @@
 .form {
   display: flex;
   justify-content: center;
-  max-width: 300px;
+  max-width: 500px;
   width: 100%;
-  background: #fff;
+  background: #f2f8fc;
   border-radius: 4px;
   padding: 30px 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-  border: 2px solid black;
+  border: 2px solid #284a5d;
 }
 
-.form .form-img {
-  width: 60px;
+.form .form-img-login {
+  width: 250px;
+  height: 200px;
 }
 
 .form .form-title {
@@ -26,7 +27,7 @@
 .form .form-input {
   height: 40px;
   padding: 0 15px;
-  border: 1px solid #eee;
+  border: 2px solid #eee;
   border-radius: 4px;
   margin-bottom: 10px;
   font-size: 14px;
@@ -34,12 +35,12 @@
 }
 
 .form .form-input:focus {
-  border-color: #c1b2f3;
+  border-color: #284a5d;
 }
 
 .form .span-error-message {
   margin-bottom: 10px;
-  color: #FF8080;
+  color: #ff8080;
   font-weight: bold;
 }
 
@@ -51,7 +52,7 @@
   font-size: 14px;
   border: 0;
   color: #fff;
-  background: #7159c1;
+  background: #284a5d;
 }
 
 .form .form-button:hover {

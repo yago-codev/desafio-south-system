@@ -6,9 +6,11 @@ import { history } from '../../history'
 import { Link } from 'react-router-dom'
 import Detail from '../detail'
 
+import iconCreate from './create.svg'
+import iconEdit from './edit.svg'
+import friendDragons from './friend-dragons.png'
 import bookImg from './spellbook.png'
 import './Dashboard.css'
-
 import Modal from '../../../src/components/modal'
 
 class Dashboard extends Component {
@@ -121,53 +123,15 @@ class Dashboard extends Component {
 
     return (
       <div className="card">
-        <img src={bookImg} alt="" />
+        <img className="card-img-dashboard" src={friendDragons} alt="" />
         <h2 className="card-title">
           Meus dragões
         </h2>
+        {this.state.dragonsName.map(dragon => (
         <ul className="list">
-          <h3 className="list-title">Nome</h3>
-          {this.state.dragonsName.map(dragon => (
-            <li key={dragon.id}>
+            <li className="list-item" key={dragon.id}>
               {dragon.name}
               <div className="modal modalEdit">
-                {/*<form onSubmit={this.handleEdit}>
-                  <h2 className="center">Editar dragão</h2>
-                  <input
-                    type="text"
-                    name="id"
-                    className="fieldId"
-                    placeholder="id"
-                    onSubmit={e => this.setState({ [e.target.id]: e.target.value })}
-                    value={dragon.id}
-                  />
-                  <input
-                    type="text"
-                    name="name"
-                    placeholder="Nome"
-                    onChange={e => this.setState({ [e.target.name]: e.target.value })}
-                    value={name}
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="type"
-                    placeholder="Tipo"
-                    onChange={e => this.setState({ [e.target.type]: e.target.value })}
-                    value={type}
-                    required
-                  />
-                  <input
-                    type="text"
-                    name="histories"
-                    placeholder="Tipo"
-                    onChange={e => this.setState({ [e.target.histories]: e.target.value })}
-                    value={histories}
-                    required
-                  />
-                  <button type="submit">Enviar</button>
-                </form>
-              </div> */}
                 <Formik
                   initialValues={{}}
                   onSubmit={this.handleEdit}
@@ -190,13 +154,17 @@ class Dashboard extends Component {
                   </Form>
                 </Formik>
               </div>
-              <button onClick={() => this.modalEdit(dragon.id)}>Editar</button>
-              <Link to={`/detail/${dragon.id}`}><button onClick={() => this.detailPage(dragon.id, dragon.name, dragon.type, dragon.histories, dragon.createdAt)}>Ver Detalhes</button></Link>
-              <Link to={`/edit/${dragon.id}`}><button onClick={() => this.detailPage(dragon.id, dragon.name, dragon.type, dragon.histories, dragon.createdAt)}>Editar</button></Link>
-              <button onClick={() => this.handleDelete(dragon.id)}>Remover</button>
+              <div className="container-btn">
+                <Link to={`/creation`}><img className="icon-edit" src={iconCreate}/></Link>
+                <Link to={`/edit/${dragon.id}`}><div className="container-btn"><img className="icon-edit" src={iconEdit}/></div></Link>
+                <button onClick={() => this.modalEdit(dragon.id)}>Editar</button>
+                <Link to={`/detail/${dragon.id}`}><button onClick={() => this.detailPage(dragon.id, dragon.name, dragon.type, dragon.histories, dragon.createdAt)}>Ver Detalhes</button></Link>
+                <button onClick={() => this.detailPage(dragon.id, dragon.name, dragon.type, dragon.histories, dragon.createdAt)}>Editar</button>
+                <button onClick={() => this.handleDelete(dragon.id)}>Remover</button>
+              </div>
             </li>
-          ))}
         </ul>
+          ))}
 
       </div>
     )
