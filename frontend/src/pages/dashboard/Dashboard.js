@@ -6,12 +6,15 @@ import { history } from '../../history'
 import { Link } from 'react-router-dom'
 import Detail from '../detail'
 
+import iconDelete from './delete.svg'
+import iconRead from './read.svg'
 import iconCreate from './create.svg'
 import iconEdit from './edit.svg'
 import friendDragons from './friend-dragons.png'
 import bookImg from './spellbook.png'
 import './Dashboard.css'
 import Modal from '../../../src/components/modal'
+import Header from '../../../src/components/header'
 
 class Dashboard extends Component {
 
@@ -122,20 +125,22 @@ class Dashboard extends Component {
     const { name, id, type, message, histories } = this.state;
 
     return (
+      <div className="container-list">
+      <Header></Header>
       <div className="card">
         <img className="card-img-dashboard" src={friendDragons} alt="" />
         <h2 className="card-title">
           Meus dragões
         </h2>
+        <div className="container-list">
         {this.state.dragonsName.map(dragon => (
         <ul className="list">
-            <li className="list-item" key={dragon.id}>
+            <li className="list-item">
               {dragon.name}
               <div className="modal modalEdit">
                 <Formik
                   initialValues={{}}
                   onSubmit={this.handleEdit}
-                // validationSchema={validations}
                 >
                   <Form className="form">
                     <div className="form-wrapper">
@@ -156,16 +161,16 @@ class Dashboard extends Component {
               </div>
               <div className="container-btn">
                 <Link to={`/creation`}><img className="icon-edit" src={iconCreate}/></Link>
-                <Link to={`/edit/${dragon.id}`}><div className="container-btn"><img className="icon-edit" src={iconEdit}/></div></Link>
-                <button onClick={() => this.modalEdit(dragon.id)}>Editar</button>
-                <Link to={`/detail/${dragon.id}`}><button onClick={() => this.detailPage(dragon.id, dragon.name, dragon.type, dragon.histories, dragon.createdAt)}>Ver Detalhes</button></Link>
-                <button onClick={() => this.detailPage(dragon.id, dragon.name, dragon.type, dragon.histories, dragon.createdAt)}>Editar</button>
-                <button onClick={() => this.handleDelete(dragon.id)}>Remover</button>
+                <Link to={`/edit/${dragon.id}`}><img className="icon-edit" src={iconEdit}/></Link>
+                <Link to={`/detail/${dragon.id}`}><img src={iconRead} className="icon-edit"/></Link>
+                <img src={iconDelete} className="icon-edit" onClick={() => this.handleDelete(dragon.id)}/>
               </div>
             </li>
         </ul>
           ))}
+        </div>
 
+      </div>
       </div>
     )
   }

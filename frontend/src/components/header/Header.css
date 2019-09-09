@@ -1,0 +1,36 @@
+.navbar {
+  width: 100%;
+  position: absolute;
+  padding: 10px 0;
+  left: 0;
+  top: 0;
+  background: #fff;
+  color: #284a5d;
+  border-bottom: 2px solid #284a5d;
+}
+
+.navbar ul {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  list-style: none;
+}
+
+.navbar li {
+  font-weight: bold;
+}
+
+.navbar img {
+  height: 70px;
+  margin-right: 10px;
+}
+
+.container-logo {
+  display: flex;
+  align-items: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #284a5d;
+}

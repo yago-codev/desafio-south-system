@@ -25,6 +25,10 @@ body {
   -webkit-font-smoothing: antialiased !important;
 }
 
+.m-auto {
+  margin: 0 auto;
+}
+
 .mb-10 {
   margin-bottom: 10px;
 }
@@ -252,4 +256,8 @@ ul.providers {
 
 .main-wrapper .content form button:hover {
   background: #634dac;
+}
+
+.link {
+  text-decoration: none;
 }

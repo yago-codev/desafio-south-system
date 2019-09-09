@@ -10,33 +10,16 @@ import listDragonsApi from '../../services/api'
 import dragonAnimation from './dragon-animation.gif'
 import './Creation.css'
 import dragonImg from '../../dragon.png'
-
-// handleSumit = e => {
-//   e.preventDefault();
-
-//   createDragon(
-//     this.state.textInput,
-//     this.state.textSelect,
-//     this.state.textTextarea
-//   );
-
 class Creation extends Component {
 
   state = {
     newDragonName: '',
     newDragonType: '',
     newDragonHistory: [],
-    // dragons: [],
   }
 
-  // async componentDidMount() {
-  //   const { data: dragons } = await listDragonsApi.get()
-
-  //   this.setState({ dragons })
-  // }
-
   handleDragonSave = async e => {
-    // e.preventDefault()
+    e.preventDefault()
 
     const { data: dragon } = await listDragonsApi.post('/dragon', {
       name: this.state.newDragonName,
@@ -50,13 +33,7 @@ class Creation extends Component {
   }
 
   render() {
-    // const { textInput, textSelect, textTextarea } = this.state;
-
     return (
-      // <Formik
-      //   initialValues={{}}
-      //   onSubmit={this.handleSubmit}
-      // >
       <form
         className="form"
         onSubmit={this.handleDragonSave}>
@@ -98,4 +75,5 @@ class Creation extends Component {
     )
   }
 }
+
 export default Creation
