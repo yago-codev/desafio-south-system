@@ -39,7 +39,6 @@ class Dashboard extends Component {
       const { name, type } = response.data;
       this.setState({ name, type });
     }
-    // this.handleEdit()
   }
 
   handleSubmit = async e => {
@@ -47,7 +46,6 @@ class Dashboard extends Component {
     const name = this.state.name;
     const type = this.state.type;
     const histories = this.state.histories;
-    // const { id } = this.props.match.params;
     const id = this.state.id;
 
     await listDragonsApi.put(`/dragon/${id}`, { name, type });
@@ -75,24 +73,10 @@ class Dashboard extends Component {
   }
 
   handleEdit = async (values) => {
-    // e.preventDefault()
     const { id } = this.props.match.params;
-    // const name = this.state.name;
-    // const type = this.state.type;
-    // const history = this.state.histories
 
-    await listDragonsApi.put(`/dragon/${id}`, values/*{
-      // name,
-      // type,
-      // history
-      // id: this.state.idDragon,
-      // name: this.state.newDragonName,
-      // type: this.state.newDragonType,
-      // history: this.state.newDragonHistory
-    }*/)
-
-    // this.setState({ dragonId: idDragon: "", newDragonName: "", newDragonType: "", newDragonHistory: [] })
-
+    await listDragonsApi.put(`/dragon/${id}`, values)
+    
     window.location.reload()
   }
 
@@ -108,33 +92,25 @@ class Dashboard extends Component {
 
   modalEdit = async (id) => {
     const { data: dragon } = await listDragonsApi.put(`/dragon/${id}`)
-
     const element = document.querySelector('.modalEdit')
+    
     element.classList.add('animated', 'bounceInDown', 'modalAnimate')
-    // document.querySelector('.fieldId').value = id
-    // document.querySelector('.fieldName').innerHTML = name
-    // document.querySelector('.fieldType').innerHTML = type
-    // document.querySelector('.fieldHistories').innerHTML = histories
-
-    // handleEdit()
-
   }
 
   render() {
-
-    const { name, id, type, message, histories } = this.state;
+    const { name, id, type, histories } = this.state;
 
     return (
       <div className="container-list">
-      <Header></Header>
-      <div className="card">
-        <img className="card-img-dashboard" src={friendDragons} alt="" />
-        <h2 className="card-title">
-          Meus dragões
-        </h2>
-        <div className="container-list">
-        {this.state.dragonsName.map(dragon => (
-        <ul className="list">
+        <Header></Header>
+        <div className="card">
+          <img className="card-img-dashboard" src={friendDragons} alt="" />
+          <h2 className="card-title">
+            Meus dragões
+          </h2>
+          <div className="container-list">
+          {this.state.dragonsName.map(dragon => (
+          <ul className="list">
             <li className="list-item">
               {dragon.name}
               <div className="modal modalEdit">
@@ -166,11 +142,10 @@ class Dashboard extends Component {
                 <img src={iconDelete} className="icon-edit" onClick={() => this.handleDelete(dragon.id)}/>
               </div>
             </li>
-        </ul>
+          </ul>
           ))}
+          </div>
         </div>
-
-      </div>
       </div>
     )
   }

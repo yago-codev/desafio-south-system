@@ -34,7 +34,6 @@ export default class Edit extends Component {
         await listDragonsApi.put(`/dragon/${id}`, {name, type, histories});
 
         history.push('/dashboard')
-     
     }
 
     handleChange = e => {
@@ -45,34 +44,34 @@ export default class Edit extends Component {
     const { name, type, histories } = this.state;
 
     return (
-          <form className="form" onSubmit={this.handleSubmit}>
-            <img className="form-img" src={dragonAnimation} />
-            <h2 className="form-title mb-15">Editar dragão</h2>
-            <input
-              className="form-input text-center"
-              name="name"
-              type="text"
-              placeholder="Qual o novo nome do seu dragão?"
-              value={name}
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-input text-center"
-              name="type"
-              type="text"
-              placeholder="Qual o tipo do seu novo dragão?"
-              value={type}
-              onChange={this.handleChange}
-            />
-            <input
-              className="form-input text-center"
-              name="histories"
-              placeholder="Qual a história do seu novo dragão?"
-              value={histories}
-              onChange={this.handleChange}
-            />
-            <button className="form-button m-auto" type="submit">Enviar</button>
-          </form>
+      <form className="form" onSubmit={this.handleSubmit}>
+        <img className="form-img" src={dragonAnimation} />
+        <h2 className="form-title mb-15">Editar dragão</h2>
+        <input
+          className="form-input text-center"
+          name="name"
+          type="text"
+          placeholder="Qual o novo nome do seu dragão?"
+          value={name}
+          onChange={this.handleChange}
+        />
+        <input
+          className="form-input text-center"
+          name="type"
+          type="text"
+          placeholder="Qual o tipo do seu novo dragão?"
+          value={type}
+          onChange={this.handleChange}
+        />
+        <input
+          className="form-input text-center"
+          name="histories"
+          placeholder="Qual a história do seu novo dragão?"
+          value={histories}
+          onChange={this.handleChange}
+        />
+        <button className="form-button m-auto" type="submit">Enviar</button>
+      </form>
     );
   }
 }

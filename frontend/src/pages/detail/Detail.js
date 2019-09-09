@@ -10,7 +10,6 @@ export default class Dragons extends Component {
     };
 
     async componentDidMount(){
-        console.log(this.props);
         const { id } = this.props.match.params;
         
         const response = await api.get(`/dragon/${id}`);
